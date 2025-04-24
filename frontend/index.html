@@ -1,0 +1,39 @@
+<!-- frontend/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>⚽ Match Outcome Predictor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>⚽ Match Outcome Predictor</h1>
+
+    <form id="predict-form">
+      <select id="home_team" required>
+        <option value="">Select Home Team</option>
+      </select>
+
+      <select id="away_team" required>
+        <option value="">Select Away Team</option>
+      </select>
+
+      <select id="venue" required>
+        <option value="">Select Venue</option>
+        <option value="Home">Home</option>
+        <option value="Away">Away</option>
+        <!-- <option value="Neutral">Neutral</option> -->
+      </select>
+
+      <button type="submit">Predict</button>
+    </form>
+
+    <div id="result"></div>
+    <div id="error"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
