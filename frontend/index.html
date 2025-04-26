@@ -1,5 +1,4 @@
-<!-- frontend/index.html -->
-
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,29 +8,39 @@
 </head>
 <body>
   <div class="container">
-    <h1>⚽ Match Outcome Predictor</h1>
-
+    <h2>⚽ Match Outcome Predictor</h2>
     <form id="predict-form">
-      <select id="home_team" required>
-        <option value="">Select Home Team</option>
-      </select>
+      <label>Home Team:</label>
+      <select id="home_team" required></select>
 
-      <select id="away_team" required>
-        <option value="">Select Away Team</option>
-      </select>
+      <label>Away Team:</label>
+      <select id="away_team" required></select>
 
+      <label>Venue:</label>
       <select id="venue" required>
-        <option value="">Select Venue</option>
         <option value="Home">Home</option>
         <option value="Away">Away</option>
-        <!-- <option value="Neutral">Neutral</option> -->
       </select>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="manualInputCheckbox" />
+        <label for="manualInputCheckbox">Enter home team stats manually</label>
+      </div>
+
+      <div class="manual-stats" id="manualStats">
+        <label>Home Team Stats</label>
+        <input type="number" id="home_gf" placeholder="GF (Goals For)" step="0.1" />
+      
+        <input type="number" id="home_ga" placeholder="GA (Goals Against)" step="0.1" />
+        <input type="number" id="home_xg" placeholder="xG (Expected Goals)" step="0.1" />
+        <input type="number" id="home_xga" placeholder="xGA (Expected Goals Against)" step="0.1" />
+        <input type="number" id="home_poss" placeholder="Possession %" step="0.1" />
+      </div>
 
       <button type="submit">Predict</button>
     </form>
 
     <div id="result"></div>
-    <div id="error"></div>
   </div>
 
   <script src="script.js"></script>
